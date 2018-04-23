@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "ViewPoints": {
+      "commandName": "Project"
+    },
+    "Religions": {
+      "commandName": "Project"
+    }
+  }
+}

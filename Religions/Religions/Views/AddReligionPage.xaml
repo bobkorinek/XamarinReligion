@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:converters="clr-namespace:Religions.Converters"
+             x:Class="Religions.Views.AddReligionsPage"
+             xmlns:viewModels="clr-namespace:Religions.ViewModels" 
+             Title="Přidání víry"
+             BindingContext="{viewModels:AddReligionsViewModel}">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Name="Přidat" Command="{Binding SaveCommand}"/>
+    </ContentPage.ToolbarItems>
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <converters:ImageSourceConverter x:Key="ImageSourceConverter"></converters:ImageSourceConverter>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ScrollView>
+        <StackLayout Margin="16">
+            <Label Text="Název" />
+            <Entry Text="{Binding Title}"/>
+            <Label Text="Popis" />
+            <Entry Text="{Binding Description}"/>
+            <Button Command="{Binding AddPictureCommand}" Text="Přidat obrázek" HorizontalOptions="Center"/>
+            <Image Source="{Binding ImageData,Converter={StaticResource ImageSourceConverter}}" HorizontalOptions="FillAndExpand"/>
+        </StackLayout>
+    </ScrollView>
+</ContentPage>
